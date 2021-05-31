@@ -31,6 +31,8 @@
     color: var(--font);
     font-family: 'Quicksand', 'Roboto', sans-serif;
     font-weight: 420;
+    background-image: url(img/tumblr_inline_nn85tigz841rewzq7_1280.png);
+    background-size: cover;
   }
   
   button {
@@ -130,8 +132,24 @@
   }
 
 footer {
-	margin-bottom: 1rem;
-	font-weight: 700;
+	margin-bottom: 0;
+    padding-top: 75px;
+    padding-bottom: 0;
+    font-family: 'Quicksand', 'Roboto', sans-serif;
+    font-size: 29px;
+    color: rgb(229, 235, 238);
+	font-weight: bolder;
 	text-align: center;
-	text-shadow: -1px 1.5px 0px rgba(0,0,0,0.4);
+	text-shadow: -1px 3px 0px black;
 }
+
+.footerLink {
+    color: rgb(229, 235, 238);
+    font-weight: bolder;
+    transition: all 0.1s;
+}
+
+.footerLink:hover {
+    color: goldenrod;
+    transition: all 0.1s;
+  }

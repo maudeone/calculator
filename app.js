@@ -75,7 +75,7 @@ function evaluate() {
 }
 
 function roundResult(number) {
-  return Math.round(number * 1000) / 1000;
+    return Math.round(number * 1000) / 1000;
 }
 
 function setInput(e) {
@@ -84,7 +84,7 @@ function setInput(e) {
   if (e.key === "=" || e.key === "Enter") evaluate();
   if (e.key === "Backspace") deleteNumber();
   if (e.key === "Escape") clear();
-  if (e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/")
+  if (e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/" || e.key === "^")
     setOperation(convertOperator(e.key));
 }
 
@@ -93,22 +93,26 @@ function convertOperator(keyboardOperator) {
   if (keyboardOperator === "*") return "×";
   if (keyboardOperator === "-") return "−";
   if (keyboardOperator === "+") return "+";
+  if (keyboardOperator === "^") return "^";
 }
 
 function add(a, b) {
-  return a + b;
+    return a + b;
 }
 
 function substract(a, b) {
-  return a - b;
+    return a - b;
 }
 
 function multiply(a, b) {
-  return a * b;
+    return a * b;
 }
 
 function divide(a, b) {
-  return a / b;
+    return a / b;
+}
+function powerOf(a, b) {
+    return Math.pow(a, b);
 }
 
 function operate(operator, a, b) {
@@ -121,6 +125,8 @@ function operate(operator, a, b) {
       return substract(a, b);
     case "×":
       return multiply(a, b);
+    case "^":
+      return powerOf(a, b);        
     case "÷":
       if (b === 0) return null;
       else return divide(a, b);
@@ -128,28 +134,3 @@ function operate(operator, a, b) {
       return null;
   }
 }
-
-/*function add(a, b) {
-	return a + b;
-};
-
-function subtract(a, b) {
-	return a - b;
-};
-
-function multiply(array) {
-  return array.reduce((a, b) => a * b, 1)
-};
-
-function powerOf(a, b) {
-  return Math.pow(a, b);
-};
-
-function factorial(a) {
-  if (a === 0 || a === 1)
-    return 1;
-  for (let i = a - 1; i >= 1; i--) {
-    a *= i;
-  }
-  return a;  
-}; */
